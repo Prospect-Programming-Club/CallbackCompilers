@@ -14,9 +14,16 @@ app.get('/', (req, res) => {
         name: req.query.name
     })
 })
+
+app.get('/difficulty', (req, res) => {
+    res.render(getView('difficulty.ejs'), {
+        category: req.query.category
+    })
+})
+
 app.get('/chemistry', (req, res) => {
     res.render(getView('chemistry.ejs'));
-    })
+})
 
 app.post('/', urlencodedParser, (req, res) => {
     console.log(req);

@@ -14,9 +14,16 @@ app.get('/', (req, res) => {
         name: req.query.name
     })
 })
+
+app.get('/difficulty', (req, res) => {
+    res.render(getView('difficulty.ejs'), {
+        category: req.query.category
+    })
+})
+
 app.get('/chemistry', (req, res) => {
     res.render(getView('chemistry.ejs'));
-    })
+})
 
 app.post('/', urlencodedParser, (req, res) => {
     console.log(req);
@@ -41,6 +48,11 @@ app.post('/math', urlencodedParser, (req, res) => {
 app.post('/chemistry', urlencodedParser, (req, res) => {
     console.log(req);
     res.redirect('/chemistry');
+})
+
+app.post('/difficulty', urlencodedParser, (req, res) => {
+    console.log(req);
+    res.redirect('/difficulty?category='+req.query.category);
 })
 
 // app.get('/about', (req, res) => {

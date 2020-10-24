@@ -16,9 +16,10 @@ app.get('/', (req, res) => {
 
 
 // SAMPLE BELOW, copy for your own pages
-// app.get('/input', (req, res) => {
-//     res.render(getView('input.ejs'))
-// })
+ app.get('/math', (req, res) => {
+     res.render(getView('math.ejs'))
+     res.redirect('/math' + req.body.name)
+ })
 
 // app.post('/input', urlencodedParser, (req, res) => {
 //     console.log(req);

@@ -26,7 +26,6 @@ app.post('/', urlencodedParser, (req, res) => {
 // SAMPLE BELOW, copy for your own pages
  app.get('/math', (req, res) => {
      res.render(getView('math.ejs'))
-     res.redirect('/math' + req.body.name)
  })
 
 // app.post('/input', urlencodedParser, (req, res) => {

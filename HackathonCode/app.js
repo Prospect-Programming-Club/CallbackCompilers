@@ -50,6 +50,11 @@ app.post('/chemistry', urlencodedParser, (req, res) => {
     res.redirect('/chemistry');
 })
 
+app.post('/difficulty', urlencodedParser, (req, res) => {
+    console.log(req);
+    res.redirect('/difficulty?category='+req.query.category);
+})
+
 // app.get('/about', (req, res) => {
 //     res.sendFile(getView('about.html'))
 //     // res.send('<h1>About Us</h1><p>This site is made with Node.js and Express</p>')

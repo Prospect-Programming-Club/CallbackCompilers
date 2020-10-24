@@ -64,7 +64,7 @@ app.post('/difficulty', urlencodedParser, (req, res) => {
 
 app.post('/problem', urlencodedParser, (req, res) => {
     console.log(req);
-    res.redirect('problem?category='+req.query.category+'?difficulty='+req.query.difficulty);
+    res.redirect('problem?category='+req.query.category);
 })
 
 // app.get('/about', (req, res) => {

@@ -1,13 +1,32 @@
+<!DOCTYPE html>
 <html>
     <body>
         <style>
             h1 {color:blue};
+            .button {
+                border: none;
+                color: red;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                margin: 4px 2px;
+                cursor: pointer;
+                background-color: red;
+            };
         </style>
         <h1>Math Trivia Game</h1>
         <img src="mathicon.png" alt="Math Operations"> <!-- Not sure why this doesn't work now -->
-        <button type="button">Practice Math</button>
+
+        <form action="/math" method="POST">
+            <button type="submit" name="math">Practice Math</button>
+        </form>
+       
         <img src="chemicon.jpg" alt="Chemistry Flask"> <!-- Not sure why this doesn't work now -->
-        <button type="button">Practice Chemistry</button>
+        <form action="/chemistry" method="POST">
+            <button type="submit" name="chemistry">Practice Chemistry</button>
+        </form>
 
         <% if (name != undefined) { %>
             <p>Hello <%= name %>!</p>

@@ -15,7 +15,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/input', (req, res) => {
-    res.render(getView('input.ejs')) // express deals with the formatting
+    res.render(getView('input.ejs')) // express deals with the formattin
 })
 
 app.post('/input', urlencodedParser, (req, res) => {

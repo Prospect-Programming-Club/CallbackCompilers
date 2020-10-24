@@ -33,9 +33,14 @@ app.post('/', urlencodedParser, (req, res) => {
      res.redirect('/?name=' + req.body.name);
  })
 
- app.post('/math', urlencodedParser, (req, res) => {
+app.post('/math', urlencodedParser, (req, res) => {
     console.log(req);
-    res.redirect('/difficulty?subject=math?category=' + req.body.name);
+    res.redirect('/math');
+})
+
+app.post('/chemistry', urlencodedParser, (req, res) => {
+    console.log(req);
+    res.redirect('/chemistry');
 })
 
 // app.get('/about', (req, res) => {

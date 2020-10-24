@@ -11,7 +11,7 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 app.get('/', (req, res) => {
     res.render(getView('home.ejs'), {
         name: req.query.name
-    }) // express deals with the formattin
+    }) // express deals with the formatting
 })
 
 app.get('/input', (req, res) => {

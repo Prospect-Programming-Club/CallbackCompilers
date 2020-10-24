@@ -26,13 +26,22 @@ app.post('/', urlencodedParser, (req, res) => {
 // SAMPLE BELOW, copy for your own pages
  app.get('/math', (req, res) => {
      res.render(getView('math.ejs'))
-     res.redirect('/math' + req.body.name)
  })
 
-// app.post('/input', urlencodedParser, (req, res) => {
-//     console.log(req);
-//     res.redirect('/?name=' + req.body.name);
-// })
+ app.post('/input', urlencodedParser, (req, res) => {
+     console.log(req);
+     res.redirect('/?name=' + req.body.name);
+ })
+
+app.post('/math', urlencodedParser, (req, res) => {
+    console.log(req);
+    res.redirect('/math');
+})
+
+app.post('/chemistry', urlencodedParser, (req, res) => {
+    console.log(req);
+    res.redirect('/chemistry');
+})
 
 // app.get('/about', (req, res) => {
 //     res.sendFile(getView('about.html'))

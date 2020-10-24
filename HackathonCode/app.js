@@ -2,6 +2,7 @@ const bodyParser = require('body-parser');
 var express = require('express');
 var ejs = require('ejs');
 const { runInNewContext } = require('vm');
+const { url } = require('inspector');
 var app = express();
 
 const views = __dirname + '/views/';
@@ -13,7 +14,14 @@ app.get('/', (req, res) => {
         name: req.query.name
     })
 })
+app.get('/chemistry', (req, res) => {
+    res.render(getView('chemistry.ejs'));
+    })
 
+app.post('/', urlencodedParser, (req, res) => {
+    console.log(req);
+    res.redirect('/'+ req.body.name);
+})
 
 // SAMPLE BELOW, copy for your own pages
  app.get('/math', (req, res) => {

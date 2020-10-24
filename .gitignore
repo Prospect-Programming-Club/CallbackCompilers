@@ -2,3 +2,5 @@
 
 /HackathonCode/package-lock.json
 HackathonCode/.vscode/launch.json
+
+/node_modules/

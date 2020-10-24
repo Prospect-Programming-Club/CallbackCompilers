@@ -12,6 +12,10 @@ class ChemProblem{
 }
 class MathProblem{
     constructor(category , difficulty){
+        this.category = category;
+        this.difficulty = difficulty;
+    }
+    generate(){
 
     }
 }

@@ -28,10 +28,15 @@ app.post('/', urlencodedParser, (req, res) => {
      res.render(getView('math.ejs'))
  })
 
-// app.post('/input', urlencodedParser, (req, res) => {
-//     console.log(req);
-//     res.redirect('/?name=' + req.body.name);
-// })
+ app.post('/input', urlencodedParser, (req, res) => {
+     console.log(req);
+     res.redirect('/?name=' + req.body.name);
+ })
+
+ app.post('/math', urlencodedParser, (req, res) => {
+    console.log(req);
+    res.redirect('/difficulty?subject=math?category=' + req.body.name);
+})
 
 // app.get('/about', (req, res) => {
 //     res.sendFile(getView('about.html'))

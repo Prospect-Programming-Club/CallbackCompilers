@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 })
 app.get('/chemistry', (req, res) => {
     res.render(getView('chemistry.ejs'));
-    })
+})
 
 app.post('/', urlencodedParser, (req, res) => {
     console.log(req);

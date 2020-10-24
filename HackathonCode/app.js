@@ -13,7 +13,9 @@ app.get('/', (req, res) => {
         name: req.query.name
     })
 })
-
+app.get('/chemistry', (req, res) => {
+    res.render(getView('chemistry.ejs'));
+    })
 
 // SAMPLE BELOW, copy for your own pages
 // app.get('/input', (req, res) => {

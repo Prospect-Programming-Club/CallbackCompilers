@@ -11,22 +11,24 @@ var urlencodedParser = bodyParser.urlencoded({ extended: false })
 app.get('/', (req, res) => {
     res.render(getView('home.ejs'), {
         name: req.query.name
-    }) // express deals with the formatting
+    })
 })
 
-app.get('/input', (req, res) => {
-    res.render(getView('input.ejs')) // express deals with the formatting
-})
 
-app.post('/input', urlencodedParser, (req, res) => {
-    console.log(req);
-    res.redirect('/?name=' + req.body.name);
-})
+// SAMPLE BELOW, copy for your own pages
+// app.get('/input', (req, res) => {
+//     res.render(getView('input.ejs'))
+// })
 
-app.get('/about', (req, res) => {
-    res.sendFile(getView('about.html'))
-    // res.send('<h1>About Us</h1><p>This site is made with Node.js and Express</p>')
-})
+// app.post('/input', urlencodedParser, (req, res) => {
+//     console.log(req);
+//     res.redirect('/?name=' + req.body.name);
+// })
+
+// app.get('/about', (req, res) => {
+//     res.sendFile(getView('about.html'))
+//     // res.send('<h1>About Us</h1><p>This site is made with Node.js and Express</p>')
+// })
 
 function getView (fileName) {
     return views + fileName;

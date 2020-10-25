@@ -7,7 +7,7 @@ class ChemProblem{
         this.difficulty=difficulty;
     }
     generate(){
-
+        
     }
 }
 class MathProblem{

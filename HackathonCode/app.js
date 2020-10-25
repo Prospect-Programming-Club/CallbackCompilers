@@ -21,13 +21,21 @@ app.get('/difficulty', (req, res) => {
     })
 })
 
+app.get('/problem', (req, res) => {
+    res.render(getView('problem.ejs'), {
+        category: req.query.category,
+        difficulty: req.query.difficulty
+    })
+    // do something here to start the problem generator
+})
+
 app.get('/chemistry', (req, res) => {
     res.render(getView('chemistry.ejs'));
 })
 
 app.post('/', urlencodedParser, (req, res) => {
     console.log(req);
-    res.redirect('/'+ req.body.name);
+    res.redirect('/');
 })
 
 // SAMPLE BELOW, copy for your own pages
@@ -53,6 +61,11 @@ app.post('/chemistry', urlencodedParser, (req, res) => {
 app.post('/difficulty', urlencodedParser, (req, res) => {
     console.log(req);
     res.redirect('/difficulty?category='+req.query.category);
+})
+
+app.post('/problem', urlencodedParser, (req, res) => {
+    console.log(req);
+    res.redirect('problem?category='+req.query.category+'&difficulty='+req.query.difficulty);
 })
 
 // app.get('/about', (req, res) => {

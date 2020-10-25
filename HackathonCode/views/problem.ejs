@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html>
     <body>
-        <script src="problem-generator.js"></script>
+        <script></script>
+        <!-- <script src="problem-generator.js"></script> -->
+        <header id="Problem Display">
+        </header>
+        <h1>Math Trivia Game</h1>
+        <form action="/" method="POST">
+            <button type="submit">Home</button>
+        </form>
+        <h2>Answer the Question!</h2>
+        
+        <p>This is the category: <%= category %></p>
+        <p>This is the difficulty: <%= difficulty %></p>
+
+        <form action="/problem?category=<%= category %>&difficulty=<%= difficulty %>" method="POST">
+            Answer: <input type="text" name="answer"> <input type="submit" value="Submit">
+        </form>
+        
     </body>
 </html>

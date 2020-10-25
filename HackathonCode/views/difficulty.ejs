@@ -1,18 +1,24 @@
+<!DOCTYPE html>
 <html>
     <head>
         <body>
+            <h1>Math Trivia Game</h1>
+            <form action="/" method="POST">
+                <button type="submit">Home</button>
+            </form>
+            <h2>Choose Difficulty</h2>
             <img src="https://image.shutterstock.com/image-illustration/easy-button-isolated-260nw-162373838.jpg" alt="easy" style="width:300px;height:300px">
-            <form action="/problem?category=<%= category %>?difficulty=easy" method="POST">
+            <form action="/problem?category=<%= category %>&difficulty=easy" method="POST">
                 <button type="submit">Easy</button>
             </form>
 
             <img src="https://miro.medium.com/max/968/1*F6SrJR7_s95r6oCF3ugMZw.png" alt="medium" style="width:300px;height:300px">
-            <form action="/problem?category=<%= category %>?difficulty=medium" method="POST">
-                <button type="submit">Normal</button>
+            <form action="/problem?category=<%= category %>&difficulty=medium" method="POST">
+                <button type="submit">Medium</button>
             </form>
 
             <img src="https://president.asu.edu/sites/default/files/styles/home_timeline_video/public/math_hard_girl.jpg?itok=HYC68nsh" alt="hard" style="width:300px;height:300px">
-            <form action="/problem?category=<%= category %>?difficulty=hard" method="POST">
+            <form action="/problem?category=<%= category %>&difficulty=hard" method="POST">
                 <button type="submit">Hard</button>
             </form>
         </body>

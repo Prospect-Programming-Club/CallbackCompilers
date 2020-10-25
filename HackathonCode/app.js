@@ -1,8 +1,5 @@
 const bodyParser = require('body-parser');
 var express = require('express');
-var ejs = require('ejs');
-const { runInNewContext } = require('vm');
-const { url } = require('inspector');
 var app = express();
 
 const views = __dirname + '/views/';
@@ -26,7 +23,6 @@ app.get('/problem', (req, res) => {
         category: req.query.category,
         difficulty: req.query.difficulty
     })
-    // do something here to start the problem generator
 })
 
 app.get('/chemistry', (req, res) => {
@@ -38,7 +34,6 @@ app.post('/', urlencodedParser, (req, res) => {
     res.redirect('/');
 })
 
-// SAMPLE BELOW, copy for your own pages
  app.get('/math', (req, res) => {
      res.render(getView('math.ejs'))
  })
@@ -67,11 +62,6 @@ app.post('/problem', urlencodedParser, (req, res) => {
     console.log(req);
     res.redirect('problem?category='+req.query.category+'&difficulty='+req.query.difficulty);
 })
-
-// app.get('/about', (req, res) => {
-//     res.sendFile(getView('about.html'))
-//     // res.send('<h1>About Us</h1><p>This site is made with Node.js and Express</p>')
-// })
 
 function getView (fileName) {
     return views + fileName;

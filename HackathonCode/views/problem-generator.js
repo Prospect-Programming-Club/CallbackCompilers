@@ -36,8 +36,8 @@ class ChemProblem{
     generate(){
         if(this.category=="unit"){
             this.problemIndex = randIndexOf(ChemDataBase.unitStringTemplates);
-            if(this.dificulty==1){this.problemIndex=0}
-            if(this.dificulty==2){this.problemIndex=1}
+            if(this.difficulty==1){this.problemIndex=0}
+            if(this.difficulty==2){this.problemIndex=1}
             if(this.problemIndex==0){
                 //first question
                 this.generateUnitUsing(0,Math.random()*10*this.difficulty);
@@ -81,10 +81,10 @@ class MathProblem {
 
     generate(){
 
-        if (category == "arithmetic") {
+        if (this.category == "arithmetic") {
             var randLeftNum;
             var randRightNum;
-            if (difficulty === "easy") {
+            if (this.difficulty === "easy") {
                 var randOp = Math.floor(Math.random() * 2) + 1;
                 var randLeftNum;
                 var randRightNum;
@@ -99,7 +99,7 @@ class MathProblem {
                     mathResult.answer = randLeftNum - randRightNum;
                     mathResult.question = randLeftNum + " - " + randRightNum;
                 } 
-            } else if (difficulty === "medium") {
+            } else if (this.difficulty === "medium") {
                 var randOp = Math.floor(Math.random() * 2) + 1;
                 var randLeftNum;
                 var randRightNum;
@@ -117,7 +117,7 @@ class MathProblem {
                     mathResult.answer = randLeftNum / randRightNum;
                     mathResult.question = randLeftNum + " ÷ " + randRightNum;
                 }
-            } else if (difficulty === "hard") {
+            } else if (this.difficulty === "hard") {
                 var randOp1 = Math.floor(Math.random() * 4) + 1;
                 var randOp2 = Math.floor(Math.random() * 4) + 1;
                 var randNum1 = Math.floor(Math.random() * 13);
@@ -156,12 +156,12 @@ class MathProblem {
                 }
 
             }
-        } else if (category === "algebra") {
-            if (difficulty === "easy") {
+        } else if (this.category === "algebra") {// TO BE DEVELOPED
+            if (this.difficulty === "easy") {
 
-            } else if (difficulty === "medium") {
+            } else if (this.difficulty === "medium") {
                 
-            } else if (difficulty === "hard") {
+            } else if (this.difficulty === "hard") {
 
             }
         }

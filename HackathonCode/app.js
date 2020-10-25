@@ -26,6 +26,7 @@ app.get('/problem', (req, res) => {
         category: req.query.category,
         difficulty: req.query.difficulty
     })
+    // do something here to start the problem generator
 })
 
 app.get('/chemistry', (req, res) => {
@@ -64,7 +65,7 @@ app.post('/difficulty', urlencodedParser, (req, res) => {
 
 app.post('/problem', urlencodedParser, (req, res) => {
     console.log(req);
-    res.redirect('problem?category='+req.query.category);
+    res.redirect('problem?category='+req.query.category+'&difficulty='+req.query.difficulty);
 })
 
 // app.get('/about', (req, res) => {

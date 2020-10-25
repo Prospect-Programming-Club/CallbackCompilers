@@ -23,7 +23,13 @@ class ChemProblem{
     //difficulty 1 or 2
     constructor(category , difficulty){
         this.category = category;
-        this.difficulty = difficulty;
+        if(difficulty=="easy"){
+            this.difficulty=1;
+        }else if(difficulty=="medium"){
+            this.difficulty=2;
+        }else{
+            this.difficulty=3;
+        }
         this.problemIndex; this.answer="NO_ANSWER"; this.output="NO_QUESTION";
         this.generate();
     }
@@ -34,23 +40,31 @@ class ChemProblem{
             if(this.dificulty==2){this.problemIndex=1}
             if(this.problemIndex==0){
                 //first question
-                this.generateUsing(Math.random()*10*this.dificulty);
+                this.generateUnitUsing(0,Math.random()*10*this.difficulty);
             }else{
                 //second question
-                this.generateUsing(Math.random()*8*this.dificulty,randIndexOf(ChemDataBase.atomnames));
+                this.generateUnitUsing(1,Math.random()*8*this.difficulty,randIndexOf(ChemDataBase.atomnames));
             }
-        }else if(this.category=="atom"){
-            this.problemIndex = randIndexOf(ChemDataBase.unitStringTemplates);
-            if(this.problemIndex==0){
-                //first question
-                this.generateUsing(Math.floor(Math.random()*4*this.dificulty)+1,Math.floor(Math.random*(2*this.difficulty+1))-this.dificulty);
+            }else if(this.category=="atom"){
+                this.problemIndex = randIndexOf(ChemDataBase.unitStringTemplates);
+                if(this.problemIndex==0){
+                    //first question
+                    this.generateAtomUsing(0,Math.floor(Math.random()*4*this.dificulty)+1,Math.floor(Math.random()*(2*this.difficulty+1))-this.dificulty);
             }else{
-                this.generateUsing()
-                
+                this.generateAtomUsing(1,Math.floor(Math.random()*5*this.dificulty)+1,Math.floor(Math.random()*2*this.dificulty))
             }
-        }
+            }
     }
-    
+    generateUnitUsing(i,...args){
+        this.output=ChemDataBase.atomStringTemplates[i](...args);
+        this.answer=ChemDataBase.atomProblemAnswers[i](...args);
+    }
+    generateAtomUsing(i,...args){
+        this.output=ChemDataBase.unitStringTemplates[i](...args);
+        this.answer=ChemDataBase.unitProblemAnswers[i](...args);
+    }
+
+
 }
 
 var mathResult = {

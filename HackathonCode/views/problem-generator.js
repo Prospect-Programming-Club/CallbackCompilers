@@ -28,7 +28,6 @@ class ChemProblem{
         this.generate();
     }
     generate(){
-<<<<<<< HEAD
         if(this.category=="unit"){
             this.problemIndex = randIndexOf(ChemDataBase.unitStringTemplates);
             if(this.dificulty==1){this.problemIndex=0}
@@ -46,14 +45,12 @@ class ChemProblem{
                 //first question
                 this.generateUsing(Math.floor(Math.random()*4*this.dificulty)+1,Math.floor(Math.random*(2*this.difficulty+1))-this.dificulty);
             }else{
-                //second question
+                this.generateUsing()
                 
             }
         }
-=======
-        
->>>>>>> 7f4bd1cb4883564bc291c5007584b45303386c88
     }
+    
 }
 
 var mathResult = {

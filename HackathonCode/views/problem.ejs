@@ -7,6 +7,10 @@
 
         <p>This is the category: <%= category %></p>
         <p>This is the difficulty: <%= difficulty %></p>
+
+        <form action="/problem?category=<%= category %>&difficulty=<%= difficulty %>" method="POST">
+            Answer: <input type="text" name="answer"> <input type="submit" value="Submit">
+        </form>
         
     </body>
 </html>

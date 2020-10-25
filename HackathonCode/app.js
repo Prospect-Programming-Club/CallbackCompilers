@@ -35,7 +35,7 @@ app.get('/chemistry', (req, res) => {
 
 app.post('/', urlencodedParser, (req, res) => {
     console.log(req);
-    res.redirect('/'+ req.body.name);
+    res.redirect('/');
 })
 
 // SAMPLE BELOW, copy for your own pages

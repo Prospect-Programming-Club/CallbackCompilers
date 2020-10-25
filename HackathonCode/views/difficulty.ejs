@@ -1,6 +1,12 @@
+<!DOCTYPE html>
 <html>
     <head>
         <body>
+            <h1>Math Trivia Game</h1>
+            <form action="/" method="POST">
+                <button type="submit">Home</button>
+            </form>
+            <h2>Choose Difficulty</h2>
             <img src="https://image.shutterstock.com/image-illustration/easy-button-isolated-260nw-162373838.jpg" alt="easy" style="width:300px;height:300px">
             <form action="/problem?category=<%= category %>&difficulty=easy" method="POST">
                 <button type="submit">Easy</button>
